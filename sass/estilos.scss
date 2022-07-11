@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+$color1: rgb(0, 255, 191);
+
+header {
+
+    height: 100px;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+
+    color: $color1;
+
+    span {
+
+        position: absolute;
+
+        right: 0;
+
+        width: 0;
+
+        background-color: black;
+
+        border-left: 1px solid white;
+
+        animation: escribir 5s infinite steps(14);
+    }
+}
+
+
+h2 {
+
+    color: white;
+
+    text-align: left;
+
+    span {
+
+        color: green;
+
+        border-bottom: medium solid black;
+
+    }
+
+}
+
+
+.logo {
+
+    height: 100%;
+}
+
+
+.menu {
+
+    a {
+
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+        text-decoration: none;
+        color: $color1;
+        font-size: 1, 2rem;
+    }
+
+    a::before {
+
+        content: "";
+        height: 3px;
+        width: 0%;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        left: 0;
+        bottom: 12px;
+        transition: 0.4s ease-out;
+    }
+
+    a:hover::before {
+
+        width: 100%;
+    }
+}
+
+
+
+.mostrarMenu,
+.esconderMenu {
+
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.5s;
+    color: rgb(255, 255, 255);
+
+}
+
+.mostrarMenu {
+
+    order: 1;
+}
+
+#check {
+
+    display: none;
+}
+
+@media(max-width: 720px) {
+
+    .mostrarMenu,
+    .esconderMenu {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.5s;
+        background: black;
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px;
+    }
+
+    .esconderMenu {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #check:checked~.menu {
+        right: 0;
+    }
+
+}
+
+#banner {
+
+    padding: 50px;
+    height: 500px;
+    background-image: url(../imagenes/pizzahorno.webp);
+    background-size: cover;
+    background-position: center;
+    font-size: 30px;
+
+}
+
+#banner::before {
+
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    left: 0;
+}
+
+
+.contenidoBaner {
+
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: baseline;
+
+    h2 {
+
+        font-size: 30px;
+        font-weight: 400;
+        padding: 10px 0;
+        text-shadow: 5px 5px 2px black;
+
+    }
+
+
+
+}
+
+.boton {
+
+    text-decoration: none;
+    color: red;
+    background-color: rgb(46, 45, 45);
+    border: 4px solid red;
+    padding: 10px 20px;
+    align-self: baseline;
+}
+
+.boton:hover {
+
+    background: white;
+    transition: 4.5s;
+}
+
+
+.efectoEscribir {
+
+    margin: auto;
+
+    background: black;
+
+}
+
+
+.maquinaEscribir {
+
+    align-content: center;
+
+    float: left;
+
+    color: rgb(0, 255, 191);
+
+    position: relative;
+}
+
+
+
+@keyframes escribir {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+body {
+
+    background: black;
+
+    justify-content: center;
+
+}
+
+footer {
+
+    font-size: 12px;
+
+    padding: 90px;
+
+    address {
+
+        color: $color1;
+
+        text-align: center;
+
+        font-size: 20px;
+
+    }
+}
+
+a {
+    text-decoration: none;
+
+    color: red;
+
+    padding: 20px;
+}
+
+
+.card {
+
+    .card-text {
+
+        color: red;
+    }
+
+    .card-title {
+
+        span {
+
+            border-bottom: medium solid springgreen;
+        }
+    }
+
+}
+
+
+.galeriaMenu {
+
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    color: white;
+    text-shadow: 5px 5px 2px black;
+    padding: 50px;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+    .img {
+        box-sizing: border-box;
+        border: 2px solid red;
+        height: 200px;
+        transition: all 0.9s;
+    }
+
+    .img:hover {
+
+        transform: scale(1.1);
+        transition: all 0.9s;
+    }
+
+    .pizza1 {
+
+        background-image: url(../imagenes/pizzamuzzarella.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza2 {
+
+        background-image: url(../imagenes/pizzacebolla.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza3 {
+
+        background-image: url(../imagenes/atuncebollachampignones.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza4 {
+
+        background-image: url(../imagenes/pizzanapolitana.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza5 {
+
+        background-image: url(../imagenes/Pizzapepperoni.jpeg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza6 {
+
+        background-image: url(../imagenes/pizzaparmesana.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza7 {
+
+        background-image: url(../imagenes/pizzajamonyanana.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza8 {
+
+        background-image: url(../imagenes/pizzadecancha.webp);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza9 {
+
+        background-image: url(../imagenes/pizzadepalmitos.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza10 {
+
+        background-image: url(../imagenes/Pizzajamonhuevo.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza11 {
+
+        background-image: url(../imagenes/empanadashorno.jpg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .pizza12 {
+
+        background-image: url(../imagenes/empanadasfritas.jpeg);
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+}
+
+@media only screen and (min-width:860px) {
+    .galeriaMenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width:590px) and (max-width:859px) {
+    .galeriaMenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width:100px) and (max-width:589px) {
+    .galeriaMenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+.historia {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    padding: 50px;
+
+    h1 {
+
+        border-bottom: medium solid red;
+    }
+
+    p {
+
+        color: white;
+    
+    }
+
+}
+
+.contactoMenu {
+
+    width: 24rem;
+    height: 28rem;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: $color1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 1px -1px 17px 0px red;
+    text-align: center;
+    color: black;
+
+    .box {
+
+        label {
+
+            font-size: 20px;
+        }
+
+
+
+        input {
+            width: 300px;
+            height: 20px;
+            margin: 4px;
+        }
+
+        textarea {
+            resize: none;
+            width: 270px;
+            margin: 4px;
+        }
+
+        button {
+
+            background-color: red;
+            border: 0px;
+            padding: 10px 40px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            text-align: center;
+        }
+    }
+
+}
+
+.container-boton {
+
+    position: fixed;
+    z-index: 9;
+    border-radius: 50%;
+    bottom: 30px;
+    right: 10px;
+    padding: 10px;
+    transition: ease 0.3s;
+    animation: efecto 1.2s infinite;
+
+    .botonWhat {
+        width: 40px;
+        transition: ease 1s;
+    }
+}
+
+.container-boton:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
